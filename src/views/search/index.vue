@@ -3,7 +3,16 @@ import { ref, reactive } from "vue";
 
 import series from "@/json/series.json";
 
-let list = ref(series);
+interface SeriesItem {
+  name: string;
+  link: string;
+}
+
+interface Series {
+  [key: string]: SeriesItem[];
+}
+
+let list = ref<Series>(series);
 let search = ref("");
 console.log(series);
 
@@ -16,8 +25,10 @@ const onSearch = () => {
     list.value = series;
   } else {
     list.value = {
-      搜索结果: l.filter(item => item.name.includes(search.value))
-    };
+      搜索结果: l.filter(item =>
+        item.name.includes(search.value)
+      ) as SeriesItem[]
+    } as Series;
   }
 };
 </script>
