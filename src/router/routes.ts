@@ -1,20 +1,20 @@
 import Layout from "@/layout/index.vue";
 import type { RouteRecordRaw } from "vue-router";
-import Demo from "@/views/demo/index.vue";
+import Search from "@/views/search/index.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "root",
     component: Layout,
-    redirect: { name: "Demo" },
+    redirect: { name: "Search" },
     children: [
       {
-        path: "demo",
-        name: "Demo",
-        component: Demo,
+        path: "search",
+        name: "Search",
+        component: Search,
         meta: {
-          title: "主页"
+          title: "美剧查询"
         }
       },
       {
@@ -30,7 +30,7 @@ const routes: Array<RouteRecordRaw> = [
         name: "About",
         component: () => import("@/views/about/index.vue"),
         meta: {
-          title: "关于",
+          title: "说明",
           noCache: true
         }
       }

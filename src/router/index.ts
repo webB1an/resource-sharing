@@ -5,6 +5,7 @@ import {
 } from "vue-router";
 import routes from "./routes";
 import { useCachedViewStoreHook } from "@/store/modules/cachedView";
+import { useNavTitleStore } from "@/store/modules/navTitle";
 import NProgress from "@/utils/progress";
 import setPageTitle from "@/utils/set-page-title";
 
@@ -24,6 +25,7 @@ router.beforeEach((to: toRouteType, from, next) => {
   NProgress.start();
   // 路由缓存
   useCachedViewStoreHook().addCachedView(to);
+  useNavTitleStore().setNavTitle(to.meta.title);
   // 页面 title
   setPageTitle(to.meta.title);
   next();
