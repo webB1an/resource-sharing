@@ -27,7 +27,7 @@ jobs:
       - name: Deploy 🔧
         run: |
           pnpm install --no-frozen-lockfile
-          sed -i "s#VITE_PUBLIC_PATH = \"/\"#VITE_PUBLIC_PATH = /vue3-h5-template/#g" $(pwd)/.env.production
+          sed -i "s#VITE_PUBLIC_PATH = \"/\"#VITE_PUBLIC_PATH = /resource-sharing/#g" $(pwd)/.env.production
           pnpm build
 
       - name: Deploy 🚀
@@ -36,4 +36,4 @@ jobs:
           branch: gh-pages
           folder: dist
           clean: true
-          
+
