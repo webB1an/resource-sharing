@@ -1,1 +1,0 @@
-import{_ as c,o as n,c as t,C as o}from"./index-s1Nln4gh.js";const s={};function a(r,_){const e=o;return n(),t(e,{title:"全部资源","is-link":"",url:"https://pan.quark.cn/s/e7989a237804"})}const i=c(s,[["render",a]]);export{i as default};
